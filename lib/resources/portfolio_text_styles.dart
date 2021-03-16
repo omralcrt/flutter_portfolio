@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/resources/portfolio_colors.dart';
 
 class PortfolioTextStyles {
-
-  static const robotoSlabLight36 = const TextStyle(
-      fontWeight: FontWeight.w300,
-      fontFamily: "Roboto_Slab",
-      fontStyle:  FontStyle.normal,
-      fontSize: 36.0
+  static const toolbarLogoText = const TextStyle(
+    fontWeight: FontWeight.w700,
+    fontFamily: "Roboto_Slab",
+    fontStyle: FontStyle.normal,
+    fontSize: 20.0,
+    color: PortfolioColors.black,
   );
 
+  static const toolbarNavigationText = const TextStyle(
+    fontWeight: FontWeight.w700,
+    fontFamily: "Roboto_Slab",
+    fontStyle: FontStyle.normal,
+    fontSize: 16.0,
+    color: PortfolioColors.black,
+  );
 }

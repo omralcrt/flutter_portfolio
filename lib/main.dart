@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/views/about/about_view.dart';
+import 'package:flutter_portfolio/views/projects/projects_view.dart';
 import 'package:flutter_portfolio/views/welcome/welcome_view.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => WelcomeView(),
         '/about': (context) => AboutView(),
+        '/projects': (context) => ProjectsView(),
       },
     );
   }
