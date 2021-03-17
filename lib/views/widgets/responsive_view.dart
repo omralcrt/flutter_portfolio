@@ -27,7 +27,7 @@ class ResponsiveView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new Scaffold(
       body: LayoutBuilder(builder: (context, constraint) {
         return Container(
           child: Scrollbar(
