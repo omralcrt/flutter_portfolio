@@ -33,4 +33,28 @@ class PortfolioTextStyles {
     fontSize: 24.0,
     color: PortfolioColors.mine_shaft,
   );
+
+  static const aboutTitleText = const TextStyle(
+    fontWeight: FontWeight.w700,
+    fontFamily: "Roboto_Slab",
+    fontStyle: FontStyle.normal,
+    fontSize: 36.0,
+    color: PortfolioColors.mine_shaft,
+  );
+
+  static const aboutSubtitleText = const TextStyle(
+    fontWeight: FontWeight.w500,
+    fontFamily: "Roboto_Slab",
+    fontStyle: FontStyle.normal,
+    fontSize: 24.0,
+    color: PortfolioColors.mine_shaft,
+  );
+
+  static const aboutContentText = const TextStyle(
+    fontWeight: FontWeight.w400,
+    fontFamily: "Roboto_Slab",
+    fontStyle: FontStyle.normal,
+    fontSize: 18.0,
+    color: PortfolioColors.mine_shaft,
+  );
 }

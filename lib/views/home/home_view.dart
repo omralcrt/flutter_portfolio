@@ -1,56 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/resources/portfolio_text_styles.dart';
 import 'package:flutter_portfolio/views/widgets/footer_view.dart';
+import 'package:flutter_portfolio/views/widgets/responsive_view.dart';
 import 'package:flutter_portfolio/views/widgets/toolbar_view.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class WelcomeView extends StatelessWidget {
+class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: LayoutBuilder(builder: (context, constraint) {
-        return Container(
-          child: Scrollbar(
-            child: SingleChildScrollView(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(minHeight: constraint.maxHeight),
-                child: IntrinsicHeight(
-                  child: Column(
-                    children: [
-                      ToolbarView(),
-                      Expanded(child: buildHomeContent()),
-                      FooterView()
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-        );
-      }),
-    );
+    return ResponsiveView(
+        largeScreen: Column(
+      children: [
+        ToolbarView(),
+        Expanded(child: buildHomeContent()),
+        FooterView()
+      ],
+    ));
   }
 
   Widget buildHomeContent() {
-    return Container(
-      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        SizedBox(
-          width: 200,
-          height: 200,
-          child: CircleAvatar(
-            backgroundImage: AssetImage('images/profile.jpg'),
-          ),
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      SizedBox(height: 32),
+      SizedBox(
+        width: 200,
+        height: 200,
+        child: CircleAvatar(
+          backgroundImage: AssetImage('images/profile.jpg'),
         ),
-        SizedBox(height: 24),
-        SelectableText("Ömral Cörüt", style: PortfolioTextStyles.homeTitleText),
-        SizedBox(height: 8),
-        SelectableText("Mobile Application Developer",
-            style: PortfolioTextStyles.homeSubtitleText),
-        SizedBox(height: 24),
-        buildSocialAccounts()
-      ]),
-    );
+      ),
+      SizedBox(height: 24),
+      SelectableText("Ömral Cörüt", style: PortfolioTextStyles.homeTitleText),
+      SizedBox(height: 8),
+      SelectableText("Mobile Application Developer",
+          style: PortfolioTextStyles.homeSubtitleText),
+      SizedBox(height: 24),
+      buildSocialAccounts(),
+      SizedBox(height: 32),
+    ]);
   }
 
   Widget buildSocialAccounts() {

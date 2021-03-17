@@ -5,7 +5,7 @@ class FooterView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
-      child: SelectableText("Made With Flutter ❤️ © 2021 Ömral Cörüt"),
+      child: SelectableText("Made With Flutter️ © 2021 Ömral Cörüt"),
     );
   }
 }
