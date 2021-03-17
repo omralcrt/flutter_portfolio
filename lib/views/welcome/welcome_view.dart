@@ -11,16 +11,18 @@ class WelcomeView extends StatelessWidget {
     return Scaffold(
       body: LayoutBuilder(builder: (context, constraint) {
         return Container(
-          child: SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: constraint.maxHeight),
-              child: IntrinsicHeight(
-                child: Column(
-                  children: [
-                    ToolbarView(),
-                    Expanded(child: buildHomeContent()),
-                    FooterView()
-                  ],
+          child: Scrollbar(
+            child: SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraint.maxHeight),
+                child: IntrinsicHeight(
+                  child: Column(
+                    children: [
+                      ToolbarView(),
+                      Expanded(child: buildHomeContent()),
+                      FooterView()
+                    ],
+                  ),
                 ),
               ),
             ),
