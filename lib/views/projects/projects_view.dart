@@ -12,26 +12,26 @@ class ProjectsView extends StatelessWidget {
     return ResponsiveView(
       largeScreen: Column(children: [
         ToolbarView(),
-        Expanded(child: buildProjectsContent(3)),
+        Expanded(child: buildProjectsContent(3, 32)),
         FooterView()
       ]),
       mediumScreen: Column(children: [
         ToolbarView(),
-        Expanded(child: buildProjectsContent(2)),
+        Expanded(child: buildProjectsContent(2, 32)),
         FooterView()
       ]),
       smallScreen: Column(children: [
         ToolbarView(),
-        Expanded(child: buildProjectsContent(1)),
+        Expanded(child: buildProjectsContent(1, 16)),
         FooterView()
       ]),
     );
   }
 
-  Widget buildProjectsContent(int columnCount) {
+  Widget buildProjectsContent(int columnCount, double horizontalPadding) {
     final projects = Projects.allProjects;
     return Container(
-        padding: EdgeInsets.all(32),
+        padding: EdgeInsets.all(horizontalPadding),
         width: double.infinity,
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

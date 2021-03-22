@@ -71,6 +71,7 @@ class ProjectItemView extends StatelessWidget {
                               PortfolioTextStyles.projectItemDescriptionText),
                     ],
                   ),
+                  minLines: 3,
                 ),
               ],
             ),
