@@ -57,4 +57,36 @@ class PortfolioTextStyles {
     fontSize: 18.0,
     color: PortfolioColors.mine_shaft,
   );
+
+  static const projectItemTitleText = const TextStyle(
+    fontWeight: FontWeight.w700,
+    fontFamily: "Roboto_Slab",
+    fontStyle: FontStyle.normal,
+    fontSize: 30.0,
+    color: PortfolioColors.mine_shaft,
+  );
+
+  static const projectItemPlatformText = const TextStyle(
+    fontWeight: FontWeight.w300,
+    fontFamily: "Roboto_Slab",
+    fontStyle: FontStyle.normal,
+    fontSize: 20.0,
+    color: PortfolioColors.mine_shaft,
+  );
+
+  static const projectItemDescriptionTitleText = const TextStyle(
+    fontWeight: FontWeight.w700,
+    fontFamily: "Roboto_Slab",
+    fontStyle: FontStyle.normal,
+    fontSize: 16.0,
+    color: PortfolioColors.mine_shaft,
+  );
+
+  static const projectItemDescriptionText = const TextStyle(
+    fontWeight: FontWeight.w300,
+    fontFamily: "Roboto_Slab",
+    fontStyle: FontStyle.normal,
+    fontSize: 16.0,
+    color: PortfolioColors.mine_shaft,
+  );
 }
