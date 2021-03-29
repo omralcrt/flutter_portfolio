@@ -1,41 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/models/project_model.dart';
 import 'package:flutter_portfolio/resources/projects.dart';
-import 'package:flutter_portfolio/views/widgets/footer_view.dart';
+import 'package:flutter_portfolio/views/layout_template/layout_template.dart';
 import 'package:flutter_portfolio/views/widgets/project_item_view.dart';
-import 'package:flutter_portfolio/views/widgets/responsive_view.dart';
-import 'package:flutter_portfolio/views/widgets/toolbar_view.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class ProjectsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveView(
-      largeScreen: Column(children: [
-        ToolbarView(),
-        Expanded(child: buildProjectsContent(3, 32)),
-        FooterView()
-      ]),
-      mediumScreen: Column(children: [
-        ToolbarView(),
-        Expanded(child: buildProjectsContent(2, 32)),
-        FooterView()
-      ]),
-      smallScreen: Column(children: [
-        ToolbarView(),
-        Expanded(child: buildProjectsContent(1, 16)),
-        FooterView()
-      ]),
-    );
+    return LayoutTemplate(child: buildProjectsContent(context));
   }
 
-  Widget buildProjectsContent(int columnCount, double horizontalPadding) {
+  Widget buildProjectsContent(BuildContext context) {
     final projects = Projects.allProjects;
     return Container(
-        padding: EdgeInsets.all(horizontalPadding),
+        padding: EdgeInsets.all(16),
         width: double.infinity,
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: buildProjectRows(projects, columnCount)));
+            children: buildProjectRows(
+                projects,
+                getValueForScreenType<int>(
+                    context: context, mobile: 1, tablet: 2, desktop: 3))));
   }
 
   List<Widget> buildProjectRows(List<ProjectModel> projects, int columnCount) {

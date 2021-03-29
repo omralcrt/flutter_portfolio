@@ -1,22 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/resources/portfolio_text_styles.dart';
-import 'package:flutter_portfolio/views/widgets/footer_view.dart';
-import 'package:flutter_portfolio/views/widgets/responsive_view.dart';
-import 'package:flutter_portfolio/views/widgets/toolbar_view.dart';
+import 'package:flutter_portfolio/views/layout_template/layout_template.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveView(
-        largeScreen: Column(
-      children: [
-        ToolbarView(),
-        Expanded(child: buildHomeContent()),
-        FooterView()
-      ],
-    ));
+    return LayoutTemplate(child: buildHomeContent());
   }
 
   Widget buildHomeContent() {

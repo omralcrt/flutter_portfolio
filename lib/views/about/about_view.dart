@@ -2,32 +2,19 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/resources/portfolio_colors.dart';
 import 'package:flutter_portfolio/resources/portfolio_text_styles.dart';
-import 'package:flutter_portfolio/views/widgets/footer_view.dart';
-import 'package:flutter_portfolio/views/widgets/responsive_view.dart';
-import 'package:flutter_portfolio/views/widgets/toolbar_view.dart';
+import 'package:flutter_portfolio/views/layout_template/layout_template.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveView(
-      largeScreen: Column(children: [
-        ToolbarView(),
-        Expanded(child: buildAboutContent(128)),
-        FooterView()
-      ]),
-      smallScreen: Column(children: [
-        ToolbarView(),
-        Expanded(child: buildAboutContent(32)),
-        FooterView()
-      ]),
-    );
+    return LayoutTemplate(child: buildAboutContent());
   }
 
-  Widget buildAboutContent(double horizontalPadding) {
+  Widget buildAboutContent() {
     return Container(
-      padding:
-          EdgeInsets.symmetric(vertical: 32, horizontal: horizontalPadding),
+      padding: EdgeInsets.symmetric(vertical: 32, horizontal: 32),
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
