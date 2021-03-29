@@ -1,27 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/models/project_model.dart';
+import 'package:flutter_portfolio/resources/portfolio_text_styles.dart';
 import 'package:flutter_portfolio/resources/projects.dart';
-import 'package:flutter_portfolio/views/layout_template/layout_template.dart';
 import 'package:flutter_portfolio/views/widgets/project_item_view.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ProjectsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutTemplate(child: buildProjectsContent(context));
+    return buildProjectsContent(context);
   }
 
   Widget buildProjectsContent(BuildContext context) {
     final projects = Projects.allProjects;
     return Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         width: double.infinity,
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: buildProjectRows(
-                projects,
-                getValueForScreenType<int>(
-                    context: context, mobile: 1, tablet: 2, desktop: 3))));
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: SelectableText(
+                  "Projects",
+                  style: PortfolioTextStyles.aboutTitleText,
+                ),
+              ),
+              SizedBox(height: 16),
+              ...buildProjectRows(
+                  projects,
+                  getValueForScreenType<int>(
+                      context: context, mobile: 1, tablet: 2, desktop: 3))
+            ]));
   }
 
   List<Widget> buildProjectRows(List<ProjectModel> projects, int columnCount) {
