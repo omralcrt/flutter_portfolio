@@ -2,6 +2,7 @@ import 'package:flutter_portfolio/models/project_model.dart';
 
 class Projects {
   static final allProjects = [
+    ProjectModel("images/webrazzicover.png", "Webrazzi", "Flutter App", 2021, "Media, Digital Marketing"),
     ProjectModel("images/turkiyepetrollericover.png", "Türkiye Petrolleri", "Flutter App", 2020, "Payment System, Gas Station"),
     ProjectModel("images/moneypaycover.png", "MoneyPay", "Flutter App", 2020, "Payment System, Campaign"),
     ProjectModel("images/oldubilcover.png", "OlduBil", "Android App", 2020, "Payment System, Campaign"),
